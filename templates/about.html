@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: #f4f6fa;
+            font-family: "Segoe UI", sans-serif;
+        }
+        .about-card {
+            border-radius: 15px;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0d6efd;
+        }
+        .skill-pill {
+            background: #e8f0fe;
+            border-radius: 20px;
+            padding: 8px 18px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="about-card mx-auto col-md-8 text-center">
+
+            <!-- Profile Image -->
+            <img src="https://via.placeholder.com/180" class="profile-img mb-3" alt="Profile">
+
+            <!-- Name -->
+            <h2 class="fw-bold">Your Name</h2>
+            <p class="text-muted">Web Developer | Django Learner | Coding Enthusiast</p>
+
+            <hr>
+
+            <!-- About Text -->
+            <h4 class="mt-4">About Me</h4>
+            <p class="text-secondary px-3">
+                Hi! I am learning Django and improving my web development skills every day.
+                I love creating websites, building backend systems, and exploring new technologies.
+            </p>
+
+            <hr>
+
+            <!-- Skills -->
+            <h4 class="mt-4">Skills</h4>
+            <div>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Django</span>
+                <span class="skill-pill">HTML</span>
+                <span class="skill-pill">CSS</span>
+                <span class="skill-pill">Bootstrap</span>
+                <span class="skill-pill">C++</span>
+            </div>
+
+            <hr>
+
+            <!-- Buttons -->
+            <div class="mt-4">
+                <a href="{% url 'home' %}" class="btn btn-primary px-4">Back to Home</a>
+                <a href="https://github.com/" target="_blank" class="btn btn-dark px-4">GitHub</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+{% load static %}
+
+<style>
+    /* Glassmorphism Navbar */
+    .glass-nav {
+        background: rgba(15, 23, 42, 0.85); /* Semi-transparent dark */
+        backdrop-filter: blur(12px); /* The blur effect */
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.8rem 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Brand / Logo Styling */
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.35rem;
+        color: #fff !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .brand-logo {
+        height: 40px; /* Perfect size for nav */
+        width: auto;
+        filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover .brand-logo {
+        transform: rotate(-10deg) scale(1.1);
+    }
+
+    /* Link Styling */
+    .nav-link {
+        color: #94a3b8 !important; /* Muted text */
+        font-weight: 500;
+        font-size: 0.95rem;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        color: #3b82f6 !important; /* Blue accent */
+        transform: translateY(-2px);
+    }
+
+    /* Mobile Toggler */
+    .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+    }
+    
+    .navbar-toggler-icon {
+        filter: invert(1); /* Ensure white icon */
+    }
+
+    /* Mobile Menu Dropdown Look */
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-top: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg glass-nav fixed-top">
+    <div class="container">
+        
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'logo.png' %}" alt="Logo" class="brand-logo">
+            <span>Q<span style="color: #3b82f6;">Linker</span></span>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-center">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <i class="bi bi-qr-code-scan me-1"></i> QR Generator
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/urlShort/">
+                        <i class="bi bi-link-45deg me-1"></i> URL Shortener
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-sm btn-outline-light rounded-pill px-3" href="https://github.com/">
+                        <i class="bi bi-github"></i> Login
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div style="height: 80px;"></div>
